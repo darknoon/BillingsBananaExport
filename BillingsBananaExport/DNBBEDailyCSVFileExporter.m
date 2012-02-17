@@ -32,6 +32,13 @@
 	return self;
 }
 
+- (double)roundNumber:(double)total;
+{
+	//0.25 hrs
+	double roundBy = 0.25;
+	return roundf(total / roundBy) * roundBy;
+}
+
 - (NSData *)exportedData;
 {
 	//Make a map of day string (yyyy-mm-dd to the total time recorded for that day
@@ -60,13 +67,18 @@
 
 	NSMutableString *str = [[NSMutableString alloc] init];
 	
+	double total = 0.0;
 	for (NSString *key in sortedKeys) {
-		NSNumber *total = [map objectForKey:key];
+		NSNumber *number = [map objectForKey:key];
 		
-		double hours = total.doubleValue / 60.0 / 60.0;
-		
-		[str appendFormat:@"%@,%.1lf\n", key, hours];
+		double hours = number.doubleValue / 60.0 / 60.0;
+		hours = [self roundNumber:hours];
+		total += hours;
+
+		[str appendFormat:@"%@,%.2lf\n", key, hours];
 	}
+	
+	[str appendFormat:@"TOTAL,%.2lf", total];
 	
 	return [str dataUsingEncoding:NSUTF8StringEncoding];
 }
