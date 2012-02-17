@@ -7,8 +7,25 @@
 //
 
 #import "DNBBEDocument.h"
+#import "DNBBEDatabase.h"
+#import "DNBBESlip.h"
 
-@implementation DNBBEDocument
+@interface DNBBEDocument ()
+
+@property IBOutlet NSButton *exportButton;
+@property IBOutlet NSPopUpButton *pickSlipButton;
+@property IBOutlet NSTextField *statusLabel;
+
+@end
+
+@implementation DNBBEDocument {
+	DNBBEDatabase *_database;
+	NSArray *_slips;
+	DNBBESlip *_pickedSlip;
+}
+@synthesize exportButton = _exportButton;
+@synthesize pickSlipButton = _pickSlipButton;
+@synthesize statusLabel = _statusLabel;
 
 - (id)init
 {
@@ -30,6 +47,7 @@
 {
 	[super windowControllerDidLoadNib:aController];
 	// Add any code here that needs to be executed once the windowController has loaded the document's window.
+	[self refreshSlipsMenu];
 }
 
 + (BOOL)autosavesInPlace
@@ -37,23 +55,32 @@
     return YES;
 }
 
-- (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
+- (void)refreshSlipsMenu;
 {
-	// Insert code here to write your document to data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning nil.
-	// You can also choose to override -fileWrapperOfType:error:, -writeToURL:ofType:error:, or -writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
-	NSException *exception = [NSException exceptionWithName:@"UnimplementedMethod" reason:[NSString stringWithFormat:@"%@ is unimplemented", NSStringFromSelector(_cmd)] userInfo:nil];
-	@throw exception;
-	return nil;
+	[self.pickSlipButton removeAllItems];
+	for (DNBBESlip *slip in _slips) {
+		[self.pickSlipButton addItemWithTitle:slip.name];
+	}
+	//Choose first
+	[self pickSlip:self.pickSlipButton];
 }
 
-- (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError
+- (BOOL)readFromURL:(NSURL *)url ofType:(NSString *)typeName error:(NSError *__autoreleasing *)outError;
 {
-	// Insert code here to read your document from the given data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning NO.
-	// You can also choose to override -readFromFileWrapper:ofType:error: or -readFromURL:ofType:error: instead.
-	// If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
-	NSException *exception = [NSException exceptionWithName:@"UnimplementedMethod" reason:[NSString stringWithFormat:@"%@ is unimplemented", NSStringFromSelector(_cmd)] userInfo:nil];
-	@throw exception;
-	return YES;
+	_database = [[DNBBEDatabase alloc] initWithFilePath:url.path];
+	if (!_database) return NO;
+	
+	_slips = [_database allSlips];
+	
+	return _database != nil;
+}
+
+- (IBAction)pickSlip:(NSPopUpButton *)sender {
+	_pickedSlip = [_slips objectAtIndex:sender.indexOfSelectedItem + 1];
+}
+
+- (IBAction)export:(NSButton *)sender {
+	NSLog(@"Entries for slip %@ : %@", _pickedSlip.name, [_database timeEntriesForSlip:_pickedSlip]);
 }
 
 @end

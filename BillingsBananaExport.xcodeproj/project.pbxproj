@@ -18,6 +18,10 @@
 		49F3637314EDEC210014480D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F3635014EDEC200014480D /* Cocoa.framework */; };
 		49F3637B14EDEC210014480D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49F3637914EDEC210014480D /* InfoPlist.strings */; };
 		49F3637E14EDEC210014480D /* BillingsBananaExportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F3637D14EDEC210014480D /* BillingsBananaExportTests.m */; };
+		49F3638814EDEC380014480D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F3638714EDEC380014480D /* libsqlite3.dylib */; };
+		49F3638B14EDEDAA0014480D /* DNBBEDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F3638A14EDEDAA0014480D /* DNBBEDatabase.m */; };
+		49F3638E14EDF8940014480D /* DNBBESlip.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F3638D14EDF8940014480D /* DNBBESlip.m */; };
+		49F3639914EDFEE00014480D /* DNBBEApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F3639814EDFEE00014480D /* DNBBEApplicationDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,21 +40,28 @@
 		49F3635314EDEC200014480D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		49F3635414EDEC200014480D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		49F3635514EDEC200014480D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		49F3635814EDEC200014480D /* BillingsBananaExport-Info.plist */ = {isa = PBXFileReference; path = "BillingsBananaExport-Info.plist"; sourceTree = "<group>"; };
+		49F3635814EDEC200014480D /* BillingsBananaExport-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BillingsBananaExport-Info.plist"; sourceTree = "<group>"; };
 		49F3635A14EDEC200014480D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		49F3635C14EDEC200014480D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		49F3635E14EDEC200014480D /* BillingsBananaExport-Prefix.pch */ = {isa = PBXFileReference; path = "BillingsBananaExport-Prefix.pch"; sourceTree = "<group>"; };
+		49F3635E14EDEC200014480D /* BillingsBananaExport-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BillingsBananaExport-Prefix.pch"; sourceTree = "<group>"; };
 		49F3636014EDEC200014480D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		49F3636214EDEC200014480D /* DNBBEDocument.h */ = {isa = PBXFileReference; path = DNBBEDocument.h; sourceTree = "<group>"; };
+		49F3636214EDEC200014480D /* DNBBEDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNBBEDocument.h; sourceTree = "<group>"; };
 		49F3636314EDEC200014480D /* DNBBEDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNBBEDocument.m; sourceTree = "<group>"; };
 		49F3636614EDEC200014480D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DNBBEDocument.xib; sourceTree = "<group>"; };
 		49F3636914EDEC200014480D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		49F3637014EDEC210014480D /* BillingsBananaExportTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BillingsBananaExportTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F3637114EDEC210014480D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		49F3637814EDEC210014480D /* BillingsBananaExportTests-Info.plist */ = {isa = PBXFileReference; path = "BillingsBananaExportTests-Info.plist"; sourceTree = "<group>"; };
+		49F3637814EDEC210014480D /* BillingsBananaExportTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BillingsBananaExportTests-Info.plist"; sourceTree = "<group>"; };
 		49F3637A14EDEC210014480D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		49F3637C14EDEC210014480D /* BillingsBananaExportTests.h */ = {isa = PBXFileReference; path = BillingsBananaExportTests.h; sourceTree = "<group>"; };
+		49F3637C14EDEC210014480D /* BillingsBananaExportTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BillingsBananaExportTests.h; sourceTree = "<group>"; };
 		49F3637D14EDEC210014480D /* BillingsBananaExportTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BillingsBananaExportTests.m; sourceTree = "<group>"; };
+		49F3638714EDEC380014480D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		49F3638914EDEDAA0014480D /* DNBBEDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNBBEDatabase.h; sourceTree = "<group>"; };
+		49F3638A14EDEDAA0014480D /* DNBBEDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNBBEDatabase.m; sourceTree = "<group>"; };
+		49F3638C14EDF8940014480D /* DNBBESlip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNBBESlip.h; sourceTree = "<group>"; };
+		49F3638D14EDF8940014480D /* DNBBESlip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNBBESlip.m; sourceTree = "<group>"; };
+		49F3639714EDFEE00014480D /* DNBBEApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNBBEApplicationDelegate.h; sourceTree = "<group>"; };
+		49F3639814EDFEE00014480D /* DNBBEApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNBBEApplicationDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49F3638814EDEC380014480D /* libsqlite3.dylib in Frameworks */,
 				49F3635114EDEC200014480D /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +108,7 @@
 		49F3634F14EDEC200014480D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49F3638714EDEC380014480D /* libsqlite3.dylib */,
 				49F3635014EDEC200014480D /* Cocoa.framework */,
 				49F3637114EDEC210014480D /* SenTestingKit.framework */,
 				49F3635214EDEC200014480D /* Other Frameworks */,
@@ -119,8 +132,14 @@
 				49F3636214EDEC200014480D /* DNBBEDocument.h */,
 				49F3636314EDEC200014480D /* DNBBEDocument.m */,
 				49F3636514EDEC200014480D /* DNBBEDocument.xib */,
+				49F3638914EDEDAA0014480D /* DNBBEDatabase.h */,
+				49F3638A14EDEDAA0014480D /* DNBBEDatabase.m */,
+				49F3638C14EDF8940014480D /* DNBBESlip.h */,
+				49F3638D14EDF8940014480D /* DNBBESlip.m */,
 				49F3636814EDEC200014480D /* MainMenu.xib */,
 				49F3635714EDEC200014480D /* Supporting Files */,
+				49F3639714EDFEE00014480D /* DNBBEApplicationDelegate.h */,
+				49F3639814EDFEE00014480D /* DNBBEApplicationDelegate.m */,
 			);
 			path = BillingsBananaExport;
 			sourceTree = "<group>";
@@ -268,6 +287,9 @@
 			files = (
 				49F3635D14EDEC200014480D /* main.m in Sources */,
 				49F3636414EDEC200014480D /* DNBBEDocument.m in Sources */,
+				49F3638B14EDEDAA0014480D /* DNBBEDatabase.m in Sources */,
+				49F3638E14EDF8940014480D /* DNBBESlip.m in Sources */,
+				49F3639914EDFEE00014480D /* DNBBEApplicationDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
