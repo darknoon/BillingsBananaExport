@@ -29,6 +29,10 @@
 	
 	return self;
 }
+- (void)dealloc
+{
+	sqlite3_close(db);
+}
 
 - (NSArray *)allSlips;
 {
