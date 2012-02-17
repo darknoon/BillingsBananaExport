@@ -11,6 +11,7 @@
 #import <sqlite3.h>
 
 #import "DNBBESlip.h"
+#import "DNBBETimeEntry.h"
 
 @implementation DNBBEDatabase {
 	sqlite3 *db;
@@ -86,12 +87,11 @@
 				NSDate *startDate = [NSDate dateWithTimeIntervalSince1970:startDateTime];
 				NSDate *endDate = [NSDate dateWithTimeIntervalSince1970:endDateTime];
 				
-				double duration = endDateTime - startDateTime;
+				DNBBETimeEntry *entry = [[DNBBETimeEntry alloc] init];
+				entry.startDate = startDate;
+				entry.endDate = endDate;
+				[a addObject:entry];
 				
-				NSDateFormatter *df = [[NSDateFormatter alloc] init];
-				[df setDateStyle:NSDateFormatterFullStyle];
-				
-				[a addObject:[NSString stringWithFormat:@"%.2lf hours on %@", duration / 60.0 / 60.0, [df stringFromDate:startDate]]];
 			}
 		}
 		sqlite3_free(statement);

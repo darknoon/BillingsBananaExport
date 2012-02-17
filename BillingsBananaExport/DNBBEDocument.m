@@ -9,7 +9,7 @@
 #import "DNBBEDocument.h"
 #import "DNBBEDatabase.h"
 #import "DNBBESlip.h"
-
+#import "DNBBEDailyCSVFileExporter.h"
 @interface DNBBEDocument ()
 
 @property IBOutlet NSButton *exportButton;
@@ -79,8 +79,23 @@
 	_pickedSlip = [_slips objectAtIndex:sender.indexOfSelectedItem + 1];
 }
 
+
 - (IBAction)export:(NSButton *)sender {
-	NSLog(@"Entries for slip %@ : %@", _pickedSlip.name, [_database timeEntriesForSlip:_pickedSlip]);
+	NSSavePanel *savePanel = [NSSavePanel savePanel];
+	
+	NSWindow *documentWindow = [[self.windowControllers objectAtIndex:0] window];
+	
+	[savePanel setAllowedFileTypes:[NSArray arrayWithObject:[DNBBEDailyCSVFileExporter fileType]]];
+	savePanel.nameFieldStringValue = _pickedSlip.name;
+	
+	[savePanel beginSheetModalForWindow:documentWindow completionHandler:^(NSInteger result) {
+		if (result == NSFileHandlingPanelOKButton) {
+			DNBBEDailyCSVFileExporter *exporter = [[DNBBEDailyCSVFileExporter alloc] initWithSlip:_pickedSlip entries:[_database timeEntriesForSlip:_pickedSlip]];
+			
+			NSData *data = [exporter exportedData];
+			[data writeToURL:savePanel.URL atomically:YES];
+		}
+	}];
 }
 
 @end

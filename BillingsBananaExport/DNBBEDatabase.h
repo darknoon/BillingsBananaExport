@@ -15,8 +15,6 @@
 
 - (NSArray *)allSlips;
 
-- (NSArray *)allTimeEntries;
-
 - (NSArray *)timeEntriesForSlip:(DNBBESlip *)slipIdentifier;
 
 

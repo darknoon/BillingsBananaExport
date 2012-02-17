@@ -22,6 +22,8 @@
 		49F3638B14EDEDAA0014480D /* DNBBEDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F3638A14EDEDAA0014480D /* DNBBEDatabase.m */; };
 		49F3638E14EDF8940014480D /* DNBBESlip.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F3638D14EDF8940014480D /* DNBBESlip.m */; };
 		49F3639914EDFEE00014480D /* DNBBEApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F3639814EDFEE00014480D /* DNBBEApplicationDelegate.m */; };
+		49F3639C14EE06980014480D /* DNBBEDailyCSVFileExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F3639B14EE06980014480D /* DNBBEDailyCSVFileExporter.m */; };
+		49F3639F14EE06FE0014480D /* DNBBETimeEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F3639E14EE06FE0014480D /* DNBBETimeEntry.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,10 @@
 		49F3638D14EDF8940014480D /* DNBBESlip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNBBESlip.m; sourceTree = "<group>"; };
 		49F3639714EDFEE00014480D /* DNBBEApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNBBEApplicationDelegate.h; sourceTree = "<group>"; };
 		49F3639814EDFEE00014480D /* DNBBEApplicationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNBBEApplicationDelegate.m; sourceTree = "<group>"; };
+		49F3639A14EE06980014480D /* DNBBEDailyCSVFileExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNBBEDailyCSVFileExporter.h; sourceTree = "<group>"; };
+		49F3639B14EE06980014480D /* DNBBEDailyCSVFileExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNBBEDailyCSVFileExporter.m; sourceTree = "<group>"; };
+		49F3639D14EE06FE0014480D /* DNBBETimeEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNBBETimeEntry.h; sourceTree = "<group>"; };
+		49F3639E14EE06FE0014480D /* DNBBETimeEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNBBETimeEntry.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,17 +135,21 @@
 		49F3635614EDEC200014480D /* BillingsBananaExport */ = {
 			isa = PBXGroup;
 			children = (
+				49F3639714EDFEE00014480D /* DNBBEApplicationDelegate.h */,
+				49F3639814EDFEE00014480D /* DNBBEApplicationDelegate.m */,
 				49F3636214EDEC200014480D /* DNBBEDocument.h */,
 				49F3636314EDEC200014480D /* DNBBEDocument.m */,
 				49F3636514EDEC200014480D /* DNBBEDocument.xib */,
 				49F3638914EDEDAA0014480D /* DNBBEDatabase.h */,
 				49F3638A14EDEDAA0014480D /* DNBBEDatabase.m */,
+				49F3639A14EE06980014480D /* DNBBEDailyCSVFileExporter.h */,
+				49F3639B14EE06980014480D /* DNBBEDailyCSVFileExporter.m */,
 				49F3638C14EDF8940014480D /* DNBBESlip.h */,
 				49F3638D14EDF8940014480D /* DNBBESlip.m */,
+				49F3639D14EE06FE0014480D /* DNBBETimeEntry.h */,
+				49F3639E14EE06FE0014480D /* DNBBETimeEntry.m */,
 				49F3636814EDEC200014480D /* MainMenu.xib */,
 				49F3635714EDEC200014480D /* Supporting Files */,
-				49F3639714EDFEE00014480D /* DNBBEApplicationDelegate.h */,
-				49F3639814EDFEE00014480D /* DNBBEApplicationDelegate.m */,
 			);
 			path = BillingsBananaExport;
 			sourceTree = "<group>";
@@ -290,6 +300,8 @@
 				49F3638B14EDEDAA0014480D /* DNBBEDatabase.m in Sources */,
 				49F3638E14EDF8940014480D /* DNBBESlip.m in Sources */,
 				49F3639914EDFEE00014480D /* DNBBEApplicationDelegate.m in Sources */,
+				49F3639C14EE06980014480D /* DNBBEDailyCSVFileExporter.m in Sources */,
+				49F3639F14EE06FE0014480D /* DNBBETimeEntry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
